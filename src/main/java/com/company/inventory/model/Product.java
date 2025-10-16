@@ -4,20 +4,22 @@ import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.Data;
+import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
-import lombok.Data;
+import jakarta.persistence.ManyToOne;
 
 @Data
 @Entity
 @Table(name="product")
-public class Product implements Serializable{
+public class Product implements Serializable {
 
 	/**
 	 * 
@@ -34,11 +36,15 @@ public class Product implements Serializable{
 	
 	private int account;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@ManyToOne(fetch= FetchType.LAZY)
+	@JsonIgnoreProperties ( {"hibernateLazyInitializer", "handler"})
 	private Category category;
 	
-	@Column(name="picture", length= 1000)
+	@Lob
+	@Basic(fetch = FetchType.LAZY)
+	@Column( name ="picture", columnDefinition = "longblob")
 	private byte[] picture;
+	
+	
 
 }
