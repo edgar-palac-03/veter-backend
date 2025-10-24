@@ -224,7 +224,6 @@ public class ProductServiceImpl implements IProductService{
 		
 		try {
 			
-			//search category to set in the product object
 			Optional<Category> category = categoryDao.findById(categoryId);
 			
 			if( category.isPresent()) {
