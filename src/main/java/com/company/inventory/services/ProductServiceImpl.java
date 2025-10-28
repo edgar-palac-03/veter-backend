@@ -47,7 +47,6 @@ public class ProductServiceImpl implements IProductService{
 				return new ResponseEntity<ProductResponseRest>(response, HttpStatus.NOT_FOUND);
 			}
 			
-			
 			//save the product
 			Product productSaved = productDao.save(product);
 			

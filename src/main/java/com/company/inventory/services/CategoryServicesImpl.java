@@ -150,7 +150,6 @@ public class CategoryServicesImpl implements ICategoryService{
 				
 		return new ResponseEntity<CategoryResponseRest>(response, HttpStatus.OK);
 
-		
 	}
 
 	@Override

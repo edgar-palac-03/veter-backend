@@ -11,17 +11,17 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="category")
-public class Category implements Serializable{
-
+@Table(name="species")
+public class Species implements Serializable{
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -4310027227752446841L;
+	private static final long serialVersionUID = 332538330969920534L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private String description;
+	private String data;
 }
